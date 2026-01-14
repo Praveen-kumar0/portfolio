@@ -1,16 +1,74 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my work, skills, and experience as a Full Stack Software Engineer.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design**: Mobile-first approach with seamless desktop experience
+- **Modern UI/UX**: Dark purple/black theme with smooth animations
+- **Interactive Components**: 
+  - Dynamic 3D card tilt effects
+  - Scroll-triggered animations
+  - Modal overlays for detailed views
+- **Contact Form**: Integrated with EmailJS for seamless communication
+- **Performance Optimized**: Fast loading with Vite build tool
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, Vite
+- **Styling**: Custom CSS with CSS Variables
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Email Service**: EmailJS
+- **Deployment**: Ready for Vercel/Netlify
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🔧 Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+```
+
+## 📝 Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── components/     # React components
+│   ├── assets/         # Static assets
+│   ├── index.css       # Global styles
+│   ├── App.jsx         # Main app component
+│   └── main.jsx        # Entry point
+├── public/             # Public assets
+└── index.html          # HTML template
+```
+
+## 🎨 Customization
+
+- Update personal information in component files
+- Modify colors in `src/index.css` CSS variables
+- Add/remove sections as needed
+- Configure EmailJS for contact form functionality
+
+## 📄 License
+
+All rights reserved - Praveen Kumar
