@@ -1164,6 +1164,7 @@ main {
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--space-sm);
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1171,16 +1172,6 @@ main {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   touch-action: manipulation;
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 /* =============================================

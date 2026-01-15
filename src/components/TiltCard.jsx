@@ -12,7 +12,10 @@ const TiltCard = ({
 
   useEffect(() => {
     // Detect if device supports touch
-    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0)
+    const timer = setTimeout(() => {
+      setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0)
+    }, 0)
+    return () => clearTimeout(timer)
   }, [])
 
   const handleMouseMove = (e) => {

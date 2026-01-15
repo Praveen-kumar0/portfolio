@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react'
 
@@ -20,14 +21,17 @@ const Hero = () => {
     const timeout = isDeleting ? 40 : 80
 
     if (!isDeleting && displayedText === role) {
-      setTimeout(() => setIsDeleting(true), 2500)
-      return
+      const timer = setTimeout(() => setIsDeleting(true), 2500)
+      return () => clearTimeout(timer)
     }
 
     if (isDeleting && displayedText === '') {
-      setIsDeleting(false)
-      setCurrentRole((prev) => (prev + 1) % roles.length)
-      return
+      // Use setTimeout to avoid synchronous state updates in effect
+      const timer = setTimeout(() => {
+        setIsDeleting(false)
+        setCurrentRole((prev) => (prev + 1) % roles.length)
+      }, 0)
+      return () => clearTimeout(timer)
     }
 
     const timer = setTimeout(() => {

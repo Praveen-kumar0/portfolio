@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { Building2, Calendar, MapPin, ChevronRight, X, GraduationCap } from 'lucide-react'
