@@ -283,6 +283,14 @@ input, textarea {
   transform-style: preserve-3d;
 }
 
+/* Disable tilt effect on mobile/touch devices */
+@media (max-width: 1023px) {
+  .card-tilt {
+    transform: none !important;
+    transform-style: flat;
+  }
+}
+
 .card-tilt:hover {
   border-color: rgba(168, 85, 247, 0.5);
   box-shadow: var(--shadow-card-hover), var(--shadow-purple);
@@ -428,6 +436,11 @@ input, textarea {
   border-radius: var(--radius-full);
   border: 1px solid rgba(168, 85, 247, 0.3);
   transition: all var(--transition-fast);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
 }
 
 .tag:hover {
@@ -439,6 +452,9 @@ input, textarea {
   width: 16px;
   height: 16px;
   object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
 }
 
 .badge {

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 const TiltCard = ({ 
   children, 
@@ -8,9 +8,16 @@ const TiltCard = ({
 }) => {
   const cardRef = useRef(null)
   const [transform, setTransform] = useState('')
+  const [isTouchDevice, setIsTouchDevice] = useState(false)
+
+  useEffect(() => {
+    // Detect if device supports touch
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0)
+  }, [])
 
   const handleMouseMove = (e) => {
-    if (!cardRef.current) return
+    // Disable tilt on touch devices
+    if (isTouchDevice || !cardRef.current) return
 
     const card = cardRef.current
     const rect = card.getBoundingClientRect()
@@ -27,7 +34,9 @@ const TiltCard = ({
   }
 
   const handleMouseLeave = () => {
-    setTransform('')
+    if (!isTouchDevice) {
+      setTransform('')
+    }
   }
 
   return (
@@ -39,8 +48,8 @@ const TiltCard = ({
       onClick={onClick}
       style={{
         ...style,
-        transform: transform || 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
-        transition: transform ? 'none' : 'transform 0.5s ease-out, box-shadow 0.3s ease'
+        transform: isTouchDevice ? 'none' : (transform || 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'),
+        transition: isTouchDevice ? 'box-shadow 0.3s ease' : (transform ? 'none' : 'transform 0.5s ease-out, box-shadow 0.3s ease')
       }}
     >
       {children}
