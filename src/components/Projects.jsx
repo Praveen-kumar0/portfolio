@@ -105,7 +105,10 @@ const ProjectCard = ({ project, index, isInView }) => {
           />
         </button>
         
-        <div className="project-card-tech">
+        <div 
+          className="project-card-tech"
+          onClick={(e) => e.stopPropagation()}
+        >
           {project.tech.map((t) => (
             <span key={t} className="tag">{t}</span>
           ))}

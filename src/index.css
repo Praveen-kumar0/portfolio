@@ -33,7 +33,7 @@
   /* Gradient */
   --gradient-purple: linear-gradient(135deg, #a855f7 0%, #7c4dff 50%, #d946ef 100%);
   --gradient-card: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
-  --gradient-bg: radial-gradient(ellipse 80% 40% at top, #1a1030 0%, #08080c 40%);
+  --gradient-bg: radial-gradient(ellipse 80% 40% at top, #1a1030 0%, #08080c 40%, #08080c 100%);
   
   /* Spacing */
   --space-xs: 0.5rem;
@@ -79,12 +79,17 @@ html {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  min-height: 100%;
+  background: #08080c;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--gradient-bg);
+  background-color: #08080c; /* Fallback color */
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--color-text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -92,6 +97,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   max-width: 100vw;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -187,12 +193,19 @@ input, textarea {
   }
 }
 
+main {
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+}
+
 .section {
   padding: var(--space-3xl) 0;
   position: relative;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  background: transparent;
 }
 
 /* Section Header - Full Gradient */
@@ -1531,7 +1544,8 @@ input, textarea {
 .footer {
   padding: var(--space-xl) 0;
   border-top: 1px solid var(--color-border);
-  background: rgba(8, 8, 12, 0.8);
+  background: #08080c;
+  width: 100%;
 }
 
 .footer-inner {
