@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -109,15 +110,22 @@ const ProjectCard = ({ project, index, isInView }) => {
           className="project-card-tech"
           onClick={(e) => {
             e.stopPropagation()
-            // Prevent card transform when clicking tech stack in expanded card
-            if (isExpanded) {
-              const card = e.currentTarget.closest('.project-card')
-              if (card) {
-                card.classList.add('tech-stack-clicked')
-                setTimeout(() => {
-                  card.classList.remove('tech-stack-clicked')
-                }, 100)
-              }
+            // Clear any text selection when clicking tech stack
+            const selection = window.getSelection()
+            if (selection) {
+              selection.removeAllRanges()
+            }
+            // Prevent card transform when clicking tech stack (always, not just when expanded)
+            const card = e.currentTarget.closest('.project-card')
+            if (card) {
+              card.classList.add('tech-stack-clicked')
+              setTimeout(() => {
+                card.classList.remove('tech-stack-clicked')
+              }, 200)
+            }
+            // Blur to remove focus
+            if (e.currentTarget.blur) {
+              e.currentTarget.blur()
             }
           }}
         >

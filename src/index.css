@@ -1096,6 +1096,15 @@ main {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+.tech-item:active {
+  /* Clear selection on active */
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .tech-item:hover {
@@ -1125,6 +1134,10 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-md);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .tech-category-title {
@@ -1155,7 +1168,19 @@ main {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-md);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* =============================================
@@ -1407,6 +1432,13 @@ main {
   outline: none;
 }
 
+/* Prevent transform when card is active but tech stack is also active */
+.project-card:active:has(.project-card-tech:active),
+.project-card:active:has(.project-card-tech .tag:active) {
+  transform: none !important;
+  transition: none !important;
+}
+
 .project-card-image {
   position: relative;
   height: 180px;
@@ -1528,6 +1560,15 @@ main {
   -ms-user-select: none;
   position: relative;
   z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+.project-card-tech:active {
+  /* Clear selection on active */
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Prevent card translation when tech stack is interacted with */
@@ -1540,6 +1581,7 @@ main {
 .project-card.tech-stack-clicked {
   transform: none !important;
   transition: none !important;
+  box-shadow: var(--shadow-card) !important;
 }
 
 /* Prevent card hover transform when hovering over tech stack */
@@ -1550,6 +1592,19 @@ main {
 /* Prevent card active transform when tech stack is active */
 .project-card:active:has(.project-card-tech:active),
 .project-card:active:has(.project-card-tech .tag:active) {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Prevent card from getting active state when tech stack is clicked */
+.project-card-tech:active ~ *,
+.project-card-tech .tag:active ~ * {
+  pointer-events: auto;
+}
+
+/* Ensure card doesn't translate when tech stack area is active */
+.project-card:has(.project-card-tech:active),
+.project-card:has(.project-card-tech .tag:active) {
   transform: none !important;
   transition: none !important;
 }

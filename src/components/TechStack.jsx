@@ -86,7 +86,21 @@ const TechStack = () => {
         <div className="tech-marquee">
           <div className="tech-marquee-inner">
             {[...technologies, ...technologies].map((tech, index) => (
-              <div key={index} className="tech-item">
+              <div 
+                key={index} 
+                className="tech-item"
+                onClick={(e) => {
+                  // Clear any text selection when clicking
+                  const selection = window.getSelection()
+                  if (selection) {
+                    selection.removeAllRanges()
+                  }
+                  // Blur to remove focus
+                  if (e.currentTarget.blur) {
+                    e.currentTarget.blur()
+                  }
+                }}
+              >
                 <span className="tech-item-icon">{tech.icon}</span>
                 <span className="tech-item-name">{tech.name}</span>
               </div>
@@ -106,9 +120,32 @@ const TechStack = () => {
                 <category.icon size={18} className="tech-category-icon" />
                 {category.title}
               </h3>
-              <div className="tech-tags">
+              <div 
+                className="tech-tags"
+                onClick={() => {
+                  // Clear any text selection when clicking tech tags
+                  const selection = window.getSelection()
+                  if (selection) {
+                    selection.removeAllRanges()
+                  }
+                }}
+              >
                 {category.skills.map((skill) => (
-                  <span key={skill.name} className="tag">
+                  <span 
+                    key={skill.name} 
+                    className="tag"
+                    onClick={(e) => {
+                      // Clear any text selection when clicking individual tag
+                      const selection = window.getSelection()
+                      if (selection) {
+                        selection.removeAllRanges()
+                      }
+                      // Blur to remove focus
+                      if (e.currentTarget.blur) {
+                        e.currentTarget.blur()
+                      }
+                    }}
+                  >
                     <img 
                       src={skill.icon} 
                       alt={skill.name} 
