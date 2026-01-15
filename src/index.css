@@ -281,6 +281,10 @@ input, textarea {
 .card-tilt {
   cursor: pointer;
   transform-style: preserve-3d;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Disable tilt effect on mobile/touch devices */
@@ -958,15 +962,26 @@ input, textarea {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .tech-category-icon {
   color: var(--color-purple-accent);
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
 }
 
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   gap: var(--space-md);
 }
 
