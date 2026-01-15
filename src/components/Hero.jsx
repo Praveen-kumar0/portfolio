@@ -55,6 +55,17 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="status-available"
+          onClick={(e) => {
+            // Clear any text selection when clicking
+            const selection = window.getSelection()
+            if (selection) {
+              selection.removeAllRanges()
+            }
+            // Blur to remove focus
+            if (e.currentTarget.blur) {
+              e.currentTarget.blur()
+            }
+          }}
         >
           <div className="status-dot-wrapper">
             <div className="status-dot" />

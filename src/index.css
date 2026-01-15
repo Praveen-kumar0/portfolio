@@ -542,6 +542,8 @@ main {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
 }
 
 .status-available:hover {
@@ -888,6 +890,10 @@ main {
   padding: 0 var(--space-lg);
   display: flex;
   flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   align-items: center;
 }
 
@@ -896,6 +902,18 @@ main {
   margin-bottom: var(--space-md);
   line-height: 1.1;
   font-weight: 800;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-title * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .hero-role {
@@ -907,6 +925,17 @@ main {
   color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.hero-role * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .hero-role-text {
@@ -932,6 +961,10 @@ main {
   margin-bottom: var(--space-xl);
   max-width: 500px;
   line-height: 1.8;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .hero-cta {
@@ -1493,6 +1526,32 @@ main {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Prevent card translation when tech stack is interacted with */
+.project-card-tech:active,
+.project-card-tech .tag:active {
+  pointer-events: auto;
+}
+
+/* Prevent card transform when tech stack is clicked (via JavaScript class) */
+.project-card.tech-stack-clicked {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Prevent card hover transform when hovering over tech stack */
+.project-card:hover:has(.project-card-tech:hover) {
+  transform: none !important;
+}
+
+/* Prevent card active transform when tech stack is active */
+.project-card:active:has(.project-card-tech:active),
+.project-card:active:has(.project-card-tech .tag:active) {
+  transform: none !important;
+  transition: none !important;
 }
 
 .projects-cta {

@@ -58,7 +58,7 @@ const ProjectCard = ({ project, index, isInView }) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
       <div
-        className="card card-hover project-card"
+        className={`card card-hover project-card ${isExpanded ? 'project-card-expanded' : ''}`}
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="project-card-image">
@@ -107,7 +107,19 @@ const ProjectCard = ({ project, index, isInView }) => {
         
         <div 
           className="project-card-tech"
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation()
+            // Prevent card transform when clicking tech stack in expanded card
+            if (isExpanded) {
+              const card = e.currentTarget.closest('.project-card')
+              if (card) {
+                card.classList.add('tech-stack-clicked')
+                setTimeout(() => {
+                  card.classList.remove('tech-stack-clicked')
+                }, 100)
+              }
+            }
+          }}
         >
           {project.tech.map((t) => (
             <span key={t} className="tag">{t}</span>
