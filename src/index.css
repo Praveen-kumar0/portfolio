@@ -913,6 +913,10 @@ main {
   margin-bottom: var(--space-2xl);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .tech-marquee-inner {
@@ -920,6 +924,10 @@ main {
   gap: var(--space-md);
   animation: marquee 25s linear infinite;
   width: max-content;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Keep scrolling on hover */
@@ -945,6 +953,8 @@ main {
   cursor: default;
   user-select: none;
   -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .tech-item:hover {
@@ -954,11 +964,20 @@ main {
 
 .tech-item-icon {
   font-size: 1.25rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
 }
 
 .tech-item-name {
   font-size: 0.875rem;
   font-weight: 500;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .tech-grid {
@@ -1010,17 +1029,36 @@ main {
 
 .experience-card {
   position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.experience-card p {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .experience-card-header {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .experience-card-title {
   font-size: 1.125rem;
   font-weight: 700;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .experience-card-company {
@@ -1029,6 +1067,10 @@ main {
   gap: var(--space-xs);
   color: var(--color-purple-accent);
   font-weight: 500;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .experience-card-meta {
@@ -1038,18 +1080,30 @@ main {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   margin-top: var(--space-xs);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .experience-card-meta-item {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .experience-card-tech {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .experience-card-highlights {
@@ -1197,6 +1251,10 @@ main {
   flex-direction: column;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .project-card:focus,
@@ -1230,6 +1288,10 @@ main {
   position: absolute;
   top: var(--space-sm);
   left: var(--space-sm);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .project-card-links {
@@ -1238,6 +1300,10 @@ main {
   right: var(--space-sm);
   display: flex;
   gap: var(--space-xs);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   opacity: 0;
   transform: translateY(-10px);
   transition: all var(--transition-normal);
@@ -1272,6 +1338,10 @@ main {
   font-weight: 700;
   margin-bottom: var(--space-sm);
   transition: color var(--transition-fast);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .project-card:hover .project-card-title {
@@ -1283,6 +1353,10 @@ main {
   color: var(--color-text-secondary);
   margin-bottom: var(--space-md);
   line-height: 1.6;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .project-card-tech {
@@ -1290,6 +1364,10 @@ main {
   flex-wrap: wrap;
   gap: var(--space-xs);
   margin-top: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .projects-cta {
