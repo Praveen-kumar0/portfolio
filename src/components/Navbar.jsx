@@ -49,7 +49,7 @@ const Navbar = () => {
             </div>
 
             <a
-              href="https://drive.google.com/file/d/1gA8p7lpIxNJOmm58_yZrKlxY3qd5Mj8L/view?usp=sharing"
+              href="https://drive.google.com/file/d/1LyZJ1XL35_td2Gt8zpRy810bxZ8Vc3Hh/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="navbar-cta btn btn-primary"
@@ -93,7 +93,7 @@ const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="https://drive.google.com/file/d/1gA8p7lpIxNJOmm58_yZrKlxY3qd5Mj8L/view?usp=sharing"
+              href="https://drive.google.com/file/d/1LyZJ1XL35_td2Gt8zpRy810bxZ8Vc3Hh/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
